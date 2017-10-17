@@ -1,0 +1,26 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">Events Admin Panel</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li [ngClass] = "{'active' : step === 'events'}" (click)="step='events'">
+                <a routerLink="/events" routerLinkActive="active">Events</a>
+            </li>
+            <li [ngClass] = "{'active' : step === 'users'}" (click)="step='users'">
+                <a routerLink="/users" routerLinkActive="active">Users</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a>
+                    <span class="glyphicon glyphicon-user"><b> {{username}} {{email}} </b></span>
+                </a>
+            </li>
+            <li>
+                <a (click)="logout()">
+                    <span  class="glyphicon glyphicon-log-in"></span> Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>

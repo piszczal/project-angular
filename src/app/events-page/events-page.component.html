@@ -1,0 +1,36 @@
+<app-navbar >
+  </app-navbar>
+<div class="container">
+  <h2>Events table</h2>
+    <p>All events from database</p>
+    <div>
+      <button routerLink="/event" class="btn btn-danger">Add new event</button>
+    </div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Tickets</th>
+          <th>Tickets sold</th>
+          <th>Start date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let event of events">
+          <td>{{event.id}}</td>
+          <td>{{event.title}}</td>
+          <td>{{event.description}}</td>
+          <td>{{event.how_many_tickets}}</td>
+          <td>{{event.how_many_tickets_sold}}</td>
+          <td>{{event.start_date}}</td>
+          <td>
+            <button routerLink="/event/edit" class="btn btn-primary" (click)="edit(event.id)">Edit</button>&nbsp;
+            <button class="btn btn-default" (click)="delete(event.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
